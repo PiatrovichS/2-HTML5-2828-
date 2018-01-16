@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Испытание: через тернии к звёздам</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/assets/course74/exam.css">
+		<link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="page-header">Форма отзыва</header>
+<main>
+  <form action="/echo" method="post" oninput="ratingoutput.value=rating.value">
+    <fieldset>
+      <legend>Личные данные</legend>
+      <div class="half-width">
+        <label for="id">ID отзыва</label>
+        <input type="text" disabled id="id" name="id" value="12345">
+      </div>
+      <div class="half-width">
+        <label for="name">Имя путешественника</label>
+        <input type="text" id="name" name="name" value="Кекс">
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Отзыв о поездке</legend>
+      <div class="half-width">
+        <label for="country">Страна визита</label>
+        <input type="search" value="Норвегия" id="country" name="country">
+      </div>
+      <div class="half-width">
+        <label for="city">Город</label>
+        <select name="city" id="city">
+          <option value="Осло">Осло</option>
+        </select>
+      </div>
+      <div class="half-width">
+        <label for="rating">Оценка поездки</label>
+        0 <input type="range" min="0" max="10" step="1" id="rating" name="rating" value="10"> 10
+      </div>
+      <div class="half-width output-area">
+        <output for="rating" name="ratingoutput">10</output>
+      </div>
+      <label for="review">Текст отзыва</label>
+      <textarea name="review" id="review" cols="30" rows="5">Это было просто мяу!</textarea>
+    </fieldset>
+    <fieldset>
+      <legend>Оценка отеля</legend>
+      <div class="half-width">
+        <label for="hotel">Название отеля</label>
+        <input type="text" name="hotel" id="hotel" placeholder="Название по-английски" pattern="^[a-zA-Z\s]+$">
+      </div>
+      <div class="half-width">
+        <label for="arrival_date">Дата въезда</label>
+        <input type="text" id="arrival_date" name="arrival_date" placeholder="В формате дд-мм-гггг" pattern="\d{2}-\d{2}-\d{4}">
+      </div>
+      <div class="one-third-width">
+        <label for="color">Цвет кроватки</label>
+        <input type="text" id="color" name="color" value="#ff0000">
+      </div>
+      <div class="two-third-width">
+        <label for="dish_rating">Оценка обедов</label>
+        <select name="dist_rating" id="dish_rating">
+          <option value="Подушечки оближешь">Подушечки оближешь</option>
+        </select>
+      </div>
+      <label for="fish">Самая вкусная рыба</label>
+      <select name="fish" id="fish" multiple>
+        <option value="Норвежский лосось" selected>Норвежский лосось</option>
+        <option value="Зубатка">Зубатка</option>
+        <option value="Морской окунь" selected>Морской окунь</option>
+        <option value="Карась">Карась</option>
+        <option value="Зеркальный карп">Зеркальный карп</option>
+      </select>
+    </fieldset>
+    <div class="buttons">
+      <input type="submit" value="Оценить">
+      <input type="reset" value="Сбросить">
+    </div>
+  </form>
+</main>
+<footer class="page-footer"></footer>
+    </body>
+</html>
